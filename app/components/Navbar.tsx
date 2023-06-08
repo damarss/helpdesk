@@ -39,7 +39,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="bg-white md:h-[77px] border-b-[1px] border-grey-light">
+    <nav className="fixed top-0 bg-white w-full md:h-[77px] border-b-[1px] border-grey-light">
       <div className="md:mx-20 max-w-screen-xl flex flex-wrap items-center mx-auto p-4 md:gap-10 justify-between">
         <Link
           href="/"

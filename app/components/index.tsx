@@ -6,6 +6,8 @@ import CheckForm from "./CheckForm";
 import CreateForm from "./CreateForm";
 import Footer from "./Footer";
 import Searchbar from "./Searchbar";
+import Hero from "./Hero";
+import TicketFlow from "./TicketFlow";
 
 export {
     Logo,
@@ -15,5 +17,7 @@ export {
     CheckForm,
     CreateForm,
     Footer,
-    Searchbar
+    Searchbar,
+    Hero,
+    TicketFlow
 }

@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,6 +9,7 @@ module.exports = {
   ],
   theme: {
     colors: {
+      ...colors,
       'biru': '#228BE6',
       'grey-base': '#F1F3F5',
       'dark': '#4A4A4A',
@@ -18,11 +21,16 @@ module.exports = {
       'h1': '36px',
       'h2': '24px',
       'h3': '13px',
+      'base': '14px',
+      'active': '14px',
+      'secondary': '12px',
     },
     fontWeight: {
       'h1': '700',
       'h2': '600',
       'h3': '600',
+      'base': '400',
+      'active': '400',
     },
     extend: {
       textColor: {

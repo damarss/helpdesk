@@ -7,7 +7,7 @@ type Props = {};
 const Searchbar = (props: Props) => {
   return (
     <div className="hidden md:flex relative">
-      <span className="pointer-events-none text-grey-mid absolute inset-y-0 start-0 grid w-10 place-content-center text-gray-500">
+      <span className="pointer-events-none text-grey-mid absolute inset-y-0 start-0 grid w-10 place-content-center">
         <BiSearchAlt />
       </span>
 
@@ -15,7 +15,7 @@ const Searchbar = (props: Props) => {
         type="input"
         id="search"
         placeholder="Cari di pertanyaan umum"
-        className="border-gray-200 ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1"
+        className="ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1 border-[1px] border-grey-light"
       />
 
     </div>
