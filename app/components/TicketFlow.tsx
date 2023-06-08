@@ -25,7 +25,7 @@ const flows: flowType[] = [
   },
 ];
 
-const Features = () => {
+const TicketFlow = () => {
   return (
     <div className="flex mb-24">
       <div className="flex justify-center items-center w-full md:my-4 md:space-x-28">
@@ -40,7 +40,7 @@ const Features = () => {
               width={flow.id == 2 ? 150 : 120}
               height={flow.id == 2 ? 150 : 120}
             />
-            <span className="whitespace-pre-line text-h3 font-h3 text-center">{flow.name}</span>
+            <h3 className="whitespace-pre-line text-h3 font-h3 text-center">{flow.name}</h3>
           </div>
         ))}
       </div>
@@ -48,4 +48,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default TicketFlow;
