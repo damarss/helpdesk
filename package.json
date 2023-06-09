@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@slider-captcha/react": "^1.0.0",
+    "@heroicons/react": "^2.0.18",
     "@types/node": "20.2.5",
     "@types/react-dom": "18.2.4",
     "autoprefixer": "10.4.14",
