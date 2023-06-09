@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+    .active {
+        @apply border-b-2;
+        @apply border-biru;
+    }
+}

@@ -2,7 +2,7 @@ import './globals.css'
 import { Footer, Logo, Navbar, AccordionFAQ } from './components'
 import { Poppins } from 'next/font/google'
 
-const poppins = Poppins({ weight: ['400', '700'], subsets: ['latin'] })
+const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] })
 
 export const metadata = {
   title: 'Helpdesk Politeknik Statistika STIS',
@@ -16,10 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={poppins.className}>
+      <body className={`${poppins.className} text-dark mt-[71px]`}>
         <header>
-          <Logo />
-          <Navbar />
+          <Navbar />        
         </header>
         <AccordionFAQ />
         

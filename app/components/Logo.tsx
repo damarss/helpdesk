@@ -8,9 +8,12 @@ const Logo = () => {
       <Image 
         src={'/assets/img/logo.png'}
         alt="Logo Helpdesk"
-        width={50}
-        height={50}
+        width={37}
+        height={35}
       />
+      <h1>
+
+      </h1>
     </div>
   )
 }
