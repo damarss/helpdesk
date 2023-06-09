@@ -94,10 +94,10 @@ const CreateForm = (props: Props) => {
             className="w-full border-[1.5px] p-2 rounded-md border-grey-light focus:outline-none focus:border-dark shadow-shadow-4 placeholder:text-base placeholder:text-grey-light"
           ></textarea>
         </div>
-        <div>
+        <div className="flex justify-center md:justify-start">
           <button
             type="button"
-            className="text-biru text-base border-[1.5px] border-biru border-dashed px-5 py-2 rounded-lg hover:bg-grey-light shadow-shadow-2"
+            className="text-biru text-base border-[1.5px] border-biru border-dashed px-5 py-2 rounded-lg hover:bg-grey-light shadow-shadow-2 w-full md:w-fit"
           >
             Klik untuk unggah dokumen
           </button>
