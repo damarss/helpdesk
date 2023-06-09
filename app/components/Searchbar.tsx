@@ -6,7 +6,7 @@ type Props = {};
 
 const Searchbar = (props: Props) => {
   return (
-    <div className="hidden md:flex relative">
+    <div className="hidden lg:flex relative">
       <span className="pointer-events-none text-grey-mid absolute inset-y-0 start-0 grid w-10 place-content-center">
         <BiSearchAlt />
       </span>

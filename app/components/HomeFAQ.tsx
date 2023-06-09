@@ -42,7 +42,7 @@ const questions: questionType[] = [
 const HomeFAQ = () => {
   return (
     <div className="mb-16 md:mb-24">
-      <h1 className="text-h1 font-h1 uppercase text-center mb-8 md:mb-14">
+      <h1 className="text-3xl font-h1 uppercase text-center mb-8 md:mb-14">
         PERTANYAAN UMUM
       </h1>
       <div className="flex flex-col justify-center items-center md:mx-28 mb-3">
