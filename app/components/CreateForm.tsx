@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Captcha from "./Captcha";
 
@@ -114,6 +116,10 @@ const CreateForm = (props: Props) => {
         </button>
         <button
           type="reset"
+          onClick={() => {
+            // scroll to top
+            window.scrollTo(0, 0);
+          }}
           className="bg-grey-base px-6 md:px-9 py-2 border-[1.5px] border-biru rounded-lg  text-biru text-active font-active  shadow-shadow-2"
         >
           Set Ulang
