@@ -27,7 +27,8 @@ const flows: flowType[] = [
 
 const TicketFlow = () => {
   return (
-    <div className="flex mb-16 md:mb-24">
+    <div className="mb-16 md:mb-24">
+      <h1 className="text-3xl font-h1 text-center mb-8 md:mb-14 uppercase">Alur Pembuatan Tiket</h1>
       <div className="flex flex-col md:flex-row justify-center items-center w-full md:my-4 space-y-7 md:space-x-28 md:space-y-0">
         {flows.map((flow) => (
           <div
@@ -37,8 +38,8 @@ const TicketFlow = () => {
             <Image
               src={flow.imagePath}
               alt={flow.name}
-              width={flow.id == 2 ? 150 : 120}
-              height={flow.id == 2 ? 150 : 120}
+              width={flow.id == 2 ? 125 : 100}
+              height={flow.id == 2 ? 125 : 100}
             />
             <h3 className="whitespace-pre-line text-h3 font-h3 text-center">{flow.name}</h3>
           </div>

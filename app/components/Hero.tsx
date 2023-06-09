@@ -5,7 +5,7 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="flex flex-col justify-center items-center mb-16 md:mb-24">
-      <Image className="mb-8 md:mb-12" src={"/assets/img/hero.png"} alt="Hero" width={956} height={492} />
+      <Image className="mb-8 md:mb-12" src={"/assets/img/hero.jpg"} alt="Polstat STIS Image created by Dipzz" width={956} height={492} />
       <div className="flex flex-col">
         <h1 className="uppercase text-3xl font-h1 text-center mb-5 md:mb-10">
           HELPDESK POLITEKNIK STATISTIKA STIS

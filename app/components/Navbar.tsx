@@ -47,7 +47,7 @@ const Navbar = () => {
       }  border-b-[1px] border-grey-light`}
     >
       <div className="lg:mx-20 p-4 h-full flex flex-wrap items-center mx-auto lg:gap-10 justify-between">
-        <div className="flex w-full h-full lg:w-fit justify-between">
+        <div className="flex w-full h-full lg:w-fit justify-between items-center">
           <Link
             href="/"
             className="flex items-center justify-center space-x-[10px]"
@@ -97,14 +97,18 @@ const Navbar = () => {
             } w-full lg:block lg:w-auto`}
             id="navbar-default"
           >
-            <ul className={`font-medium flex flex-col p-4 lg:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-4 lg:mt-0 lg:border-0 ${isMenuOpen ? "w-fit space-y-2": ""}`}>
+            <ul
+              className={`font-medium flex flex-col p-4 lg:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-4 lg:mt-0 lg:border-0 ${
+                isMenuOpen ? "w-fit space-y-2" : ""
+              }`}
+            >
               {menus.map((menu: menuType) => (
                 <li key={menu.id}>
                   <Link
                     href={menu.url}
-                    className={`${
+                    className={`block text-h3 font-h3 py-2 pl-3 pr-4 lg:bg-transparent lg:p-0 hover:active ${
                       pathname == menu.url ? "active" : ""
-                    } block text-h3 font-h3 py-2 pl-3 pr-4 lg:bg-transparent lg:p-0 hover:border-b-2 hover:border-biru`}
+                    } `}
                     aria-current="page"
                     onClick={() => setIsMenuOpen(false)}
                   >
