@@ -9,6 +9,7 @@ import Searchbar from "./Searchbar";
 import Hero from "./Hero";
 import TicketFlow from "./TicketFlow";
 import Features from "./Features";
+import HomeFAQ from "./HomeFAQ";
 
 export {
     Logo,
@@ -22,4 +23,5 @@ export {
     Hero,
     TicketFlow,
     Features,
+    HomeFAQ,
 }

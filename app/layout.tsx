@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${poppins.className} text-dark`}>
+      <body className={`${poppins.className} text-dark mt-[71px]`}>
         <header>
           <Navbar />        
         </header>

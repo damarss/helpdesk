@@ -1,15 +1,16 @@
 import Image from 'next/image'
 import React from 'react'
-import { Features, Hero, TicketFlow } from './components'
+import { Features, Hero, HomeFAQ, TicketFlow } from './components'
 
 type Props = {}
 
 const HomePage = (props: Props) => {
   return (
-    <main className="flex flex-col justify-center md:mx-36 mt-[71px]">
+    <main className="flex flex-col justify-center mx-3 md:mx-36">
       <Hero />
       <TicketFlow />
       <Features />
+      <HomeFAQ />
     </main>
   )
 }

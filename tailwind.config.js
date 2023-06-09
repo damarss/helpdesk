@@ -19,7 +19,7 @@ module.exports = {
       fontSize: {
         'h1': '36px',
         'h2': '24px',
-        'h3': '13px',
+        'h3': '14px',
         'base': '14px',
         'active': '14px',
         'secondary': '12px',
