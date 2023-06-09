@@ -10,6 +10,7 @@ import Hero from "./Hero";
 import TicketFlow from "./TicketFlow";
 import Features from "./Features";
 import HomeFAQ from "./HomeFAQ";
+import Captcha from "./Captcha";
 
 export {
     Logo,
@@ -24,4 +25,5 @@ export {
     TicketFlow,
     Features,
     HomeFAQ,
+    Captcha,
 }

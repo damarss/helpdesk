@@ -4,7 +4,7 @@
 
 @layer utilities {
     .active {
-        @apply border-b-2;
+        @apply border-b-[1.5px];
         @apply border-biru;
     }
 }

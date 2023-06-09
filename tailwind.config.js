@@ -40,8 +40,9 @@ module.exports = {
       },
       boxShadow: {
         'shadow-1': '0px 7px 64px rgba(65, 47, 87, 0.12)',
-        'shadow-2': '0px 7px 64px rgba(65, 47, 87, 0.7)',
+        'shadow-2': '0px 4px 4px rgba(0, 0, 0, 0.25), 0px 7px 64px rgba(65, 47, 87, 0.07)',
         'shadow-3': '0px 7px 64px rgba(65, 47, 87, 0.23)',
+        'shadow-4': '0px 6.11px 55.89px rgba(65, 47, 87, 0.12)',
       }
     },
   },
