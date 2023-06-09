@@ -60,27 +60,28 @@ const AccordionFAQ = () => {
     },
   ];
 
-  return (
-    <div className="flex justify-evenly">
-      <div className="w-1/4">
-        {faqData.map((data) => (
-          <AccordionUI
-            key={data.id}
-            title={data.title}
-            questions={data.questions}
-            onQuestionClick={handleQuestionClick}
-          />
-        ))}
-      </div>
-      <div className="w-1/2 ">
-        {selectedQuestion ? (
-          <CardFAQ question={selectedQuestion} />
-        ) : (
-          <div className="bg-gray-200 p-4">Pilih pertanyaan untuk melihat jawabannya.</div>
-        )}
-      </div>
+return (
+  <div className="flex flex-col md:flex-row">
+    <div className="w-full md:w-1/3 mr-28 ">
+      {faqData.map((data) => (
+        <AccordionUI
+          key={data.id}
+          title={data.title}
+          questions={data.questions}
+          onQuestionClick={handleQuestionClick}
+        />
+      ))}
     </div>
-  );
+    <div className="w-full md:w-2/3">
+      {selectedQuestion ? (
+        <CardFAQ question={selectedQuestion} />
+      ) : (
+        <div className="bg-white mt-2 rounded-lg  shadow-shadow-1 whitespace-pre-line p-12">Pilih pertanyaan untuk melihat jawabannya.</div>
+      )}
+    </div>
+  </div>
+);
+
 };
 
 export default AccordionFAQ;

@@ -1,5 +1,5 @@
 import './globals.css'
-import { Footer, Logo, Navbar, AccordionFAQ } from './components'
+import { Footer, Logo, Navbar } from './components'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] })
@@ -20,7 +20,6 @@ export default function RootLayout({
         <header>
           <Navbar />        
         </header>
-        <AccordionFAQ />
         
         {children}
         <Footer />
