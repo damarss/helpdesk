@@ -5,7 +5,14 @@ import React from "react";
 const Hero = () => {
   return (
     <div className="flex flex-col justify-center items-center mb-16 md:mb-24">
-      <Image className="mb-8 md:mb-12" src={"/assets/img/hero.jpg"} alt="Polstat STIS Image created by Dipzz" width={956} height={492} />
+      <Image
+        className="mb-8 md:mb-12"
+        src={"/assets/img/hero.jpg"}
+        alt="Polstat STIS Image created by Dipzz"
+        width={956}
+        height={492}
+        priority
+      />
       <div className="flex flex-col">
         <h1 className="uppercase text-3xl font-h1 text-center mb-5 md:mb-10">
           HELPDESK POLITEKNIK STATISTIKA STIS
@@ -17,9 +24,13 @@ const Hero = () => {
           tanggapan dan kemajuan penanganan permasalahan. Sistem ini mencatat
           arsip lengkap dan riwayat dari semua permintaan bantuan. Alamat email
           yang valid diperlukan untuk dapat membuat tiket bantuan. Sebelum anda
-          membuat tiket, periksalah <Link className="text-biru font-semibold underline" href="/faq">Pertanyaan Umum</Link> kami terlebih dahulu,
-          barangkali apa yang ingin akan dapatkan informasinya sudah tersedia di
-          sana sehingga tidak perlu membuat tiket baru.
+          membuat tiket, periksalah{" "}
+          <Link className="text-biru font-semibold underline" href="/faq">
+            Pertanyaan Umum
+          </Link>{" "}
+          kami terlebih dahulu, barangkali apa yang ingin akan dapatkan
+          informasinya sudah tersedia di sana sehingga tidak perlu membuat tiket
+          baru.
         </p>
       </div>
     </div>

@@ -23,6 +23,7 @@ const CreateTicketPage = (props: Props) => {
             alt="Create Ticket Illustration"
             width={400}
             height={400}
+            priority
           />
         </div>
       </div>
