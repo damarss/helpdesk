@@ -44,7 +44,7 @@ const CheckForm = (props: Props) => {
 
       </div>
       </div>
-      <div className="flex w-full md:w-2/3 ms-auto md:pe-4">
+      <div className="flex justify-center md:justify-normal w-full md:w-3/4 mt-6 ms-auto md:pe-4">
         <Image
           src="/assets/img/Verify.png"
           alt="Create Ticket Illustration"

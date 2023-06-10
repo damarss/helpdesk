@@ -61,7 +61,7 @@ const AccordionFAQ = () => {
   ];
 
 return (
-  <div className="flex flex-col md:flex-row">
+  <div className="flex flex-col md:flex-row space-y-6 md:space-y-0">
     <div className="w-full md:w-1/3 mr-28 ">
       {faqData.map((data) => (
         <AccordionUI

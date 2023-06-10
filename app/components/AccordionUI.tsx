@@ -44,7 +44,7 @@ const handleQuestionClick = (question: Question) => {
 return (
     <>
     <div
-        className={`flex group cursor-pointer w-full mx-auto h-16 justify-between items-center p-2 mt-2 rounded-md shadow-lg
+        className={`flex group cursor-pointer w-full mx-auto h-16 justify-between items-center  mt-2 rounded-md shadow-lg
         ${isOpen ? 'bg-blue-base' : 'bg-white'} 
         hover:bg-blue-base hover:shadow-lg focus:bg-blue-base hover:border-none border-2 border-grey-light`}
         onClick={handleAccordionClick}
@@ -67,11 +67,11 @@ return (
     </div>
 
     {isOpen && (
-        <div className='ml-8 border-l-[3px] border-grey-light my-6'>
+        <div className='ml-4 md:ml-8 border-l-[3px] border-grey-light my-6'>
         {questions.map((question) => (
             <div
             key={question.id}
-            className={`cursor-pointer ml-12 my-4 bg-white w-full sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
+            className={`cursor-pointer text-sm md:text-base ml-10 my-4 bg-white w-2/3 sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
                 selectedQuestionId === question.id ? 'font-semibold' : 'text-grey-mid'
             }`}
             onClick={() => handleQuestionClick(question)}
