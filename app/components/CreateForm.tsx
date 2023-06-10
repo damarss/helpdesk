@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Captcha from "./Captcha";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 type Props = {};
 
@@ -59,13 +59,16 @@ const CreateForm = (props: Props) => {
                 name="topik"
                 id="topik"
                 className="w-full border-[1.5px] p-2 rounded-md border-grey-light focus:outline-none focus:border-dark shadow-shadow-4 text-base placeholder:text-grey-light"
+                defaultValue="default"
               >
-                <option value="" disabled selected hidden>
+                <option value="default" disabled hidden>
                   pilih salah satu topik bantuan
                 </option>
-                <option value="topik-1">Topik 1</option>
-                <option value="topik-2">Topik 2</option>
-                <option value="topik-3">Topik 3</option>
+                <option value="topik-1">Pengaduan</option>
+                <option value="topik-2">Pendaftaran</option>
+                <option value="topik-3">KTPU</option>
+                <option value="topik-4">Pembayaran</option>
+                <option value="topik-5">Pelaksanaan Ujian</option>
               </select>
             </div>
 
@@ -76,8 +79,8 @@ const CreateForm = (props: Props) => {
               <input
                 type="text"
                 name="judul"
-                id="email"
-                placeholder="email yang dapat dihubungi"
+                id="judul"
+                placeholder="judul permasalahan yang dihadapi"
                 className="w-full border-[1.5px] p-2 rounded-md border-grey-light focus:outline-none focus:border-dark shadow-shadow-4 text-base placeholder:text-grey-light"
               />
             </div>
@@ -85,7 +88,7 @@ const CreateForm = (props: Props) => {
         </div>
         <div className="flex flex-col w-full mb-5">
           <label htmlFor="email" className="text-dark text-h3 font-h3 mb-1">
-            Judul Permasalahan
+            Detail Permasalahan
           </label>
           <textarea
             name="detail"
@@ -106,7 +109,10 @@ const CreateForm = (props: Props) => {
         </div>
       </div>
 
-      <Captcha />
+      <HCaptcha
+        sitekey="8e3b4de6-cd98-4c8c-ad52-2c0a82f1a024"
+        onVerify={(token, ekey) => console.log("Ha")}
+      />
       <div className="flex space-x-7 justify-center md:justify-start">
         <button
           type="submit"
