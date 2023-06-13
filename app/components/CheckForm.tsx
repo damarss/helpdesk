@@ -7,7 +7,16 @@ const CheckForm = (props: Props) => {
   return (
     <>
     <div className='flex flex-col md:flex-row my-6'>
-      <div className="flex flex-col py-2 space-y-4 md:space-y-2 md:w-1/4">
+      <div className="md:hidden flex justify-center md:justify-end w-full md:w-1/2 xl:w-1/3 mb-6 md:pe-4 md:mx-6 ">
+        <Image
+          src="/assets/img/Verify.png"
+          alt="Create Ticket Illustration"
+          width={200}
+          height={200}
+          />
+      </div>
+      <div className="flex flex-col py-2 space-y-4 md:space-y-6 md:w-2/5 lg:w-1/4">
+         
         <div className="flex flex-col">
           <label htmlFor="email" className="text-dark text-h3 font-h3 mb-1">
             Alamat Email
@@ -45,7 +54,7 @@ const CheckForm = (props: Props) => {
 
       </div>
       </div>
-      <div className="flex justify-center w-full md:w-1/3 mt-6 md:pe-4">
+           <div className="hidden md:flex justify-center md:justify-end w-full md:w-1/2 xl:w-1/3  md:pe-4 md:mx-6 ">
         <Image
           src="/assets/img/Verify.png"
           alt="Create Ticket Illustration"
@@ -53,6 +62,7 @@ const CheckForm = (props: Props) => {
           height={200}
           />
       </div>
+     
     </div>
      <div className=" my-4 sm:my-12 font-light text-[11px] text-grey-mid">
         <p>
