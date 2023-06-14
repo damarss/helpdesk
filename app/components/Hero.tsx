@@ -25,7 +25,7 @@ const Hero = () => {
           arsip lengkap dan riwayat dari semua permintaan bantuan. Alamat email
           yang valid diperlukan untuk dapat membuat tiket bantuan. Sebelum anda
           membuat tiket, periksalah{" "}
-          <Link className="text-biru font-semibold underline" href="/faq">
+          <Link className="font-semibold underline" href="/faq">
             Pertanyaan Umum
           </Link>{" "}
           kami terlebih dahulu, barangkali apa yang ingin akan dapatkan
