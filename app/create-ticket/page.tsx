@@ -17,7 +17,7 @@ const CreateTicketPage = (props: Props) => {
       </div>
       <div className="flex flex-col md:flex-row">
         <CreateForm />
-        <div className="ms-auto p-4 md:pe-0 -order-1 md:order-1">
+        <div className="ms-auto p-4 md:pe-0 hidden md:block">
           <Image
             src="/assets/img/create-ticket-illustration.png"
             alt="Create Ticket Illustration"
