@@ -45,6 +45,7 @@ const Navbar = () => {
       className={`z-10 fixed top-0 bg-white w-full ${
         isMenuOpen ? "h-fit" : "h-[77px]"
       }  border-b-[1px] border-grey-light`}
+      onBlur={() => setTimeout(() => setIsMenuOpen(false), 100)}      
     >
       <div className="lg:mx-20 p-4 h-full flex flex-wrap items-center mx-auto lg:gap-10 justify-between">
         <div className="flex w-full h-full lg:w-fit justify-between items-center">
