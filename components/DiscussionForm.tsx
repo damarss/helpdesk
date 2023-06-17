@@ -4,7 +4,7 @@ type Props = {};
 
 const DiscussionForm = (props: Props) => {
   return (
-    <form className="mb-8 md:mb-12">
+    <form className="mb-8 md:mb-12 border-t-[1px] border-grey-light pt-6">
       <h2 className="text-h2 font-h2 mb-4">Kirim Jawaban</h2>
       <textarea
         cols={30}

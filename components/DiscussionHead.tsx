@@ -1,21 +1,6 @@
 import React from "react";
 import { FaPrint } from "react-icons/fa";
-
-type discussion = {
-  id: number;
-  userName: string;
-  message: string;
-  createdAt: string;
-};
-
-type ticket = {
-  number: string;
-  isClosed: boolean;
-  createdAt: string;
-  userName: string;
-  userEmail: string;
-  discussions: discussion[];
-};
+import { ticket } from "@/app/check-ticket/[number]/page";
 
 type Props = {
   ticket: ticket;
@@ -90,4 +75,3 @@ const DiscussionHead = (props: Props) => {
 };
 
 export default DiscussionHead;
-export type { Props, ticket, discussion };

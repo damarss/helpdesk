@@ -70,7 +70,6 @@ const CheckForm: React.FC<CheckFormProps> = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col space-y-4 md:space-y-6 md:w-2/5 lg:w-1/4">
           <Alert showAlert={showAlert} setShowAlert={setShowAlert} errorType={errorType} />

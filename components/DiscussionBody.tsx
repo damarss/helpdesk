@@ -1,6 +1,7 @@
 import React from "react";
 import DiscussionCard from "./DiscussionCard";
-import { ticket } from "./DiscussionHead";
+import { ticket } from "@/app/check-ticket/[number]/page";
+import { LuCheckSquare } from "react-icons/lu";
 
 type Props = {
   ticket: ticket;
@@ -10,7 +11,7 @@ const DiscussionBody = (props: Props) => {
   const { ticket } = props;
 
   return (
-    <div className="mb-6 md:mb-8 border-b-[1px] border-grey-light">
+    <div className="mb-4 md:mb-6">
       <span className="block text-secondary text-grey-light mb-10 text-center">
         Dibuka oleh {ticket.userName} pada{" "}
         {new Date(ticket.createdAt).toLocaleDateString("id", {
@@ -31,6 +32,10 @@ const DiscussionBody = (props: Props) => {
             createdAt={discussion.createdAt}
           />
         ))}
+      {ticket.isClosed && (<div className="flex space-x-2 items-center">
+        <LuCheckSquare className="text-xl text-green" />
+        <p className="text-secondary text-grey-light">Ditutup oleh {ticket?.closedBy} dengan status selesai pada {new Date(ticket?.closedAt || "").toLocaleDateString("id", {day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "numeric"})}</p>
+      </div>)}
     </div>
   );
 };
