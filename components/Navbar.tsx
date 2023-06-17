@@ -107,7 +107,7 @@ const Navbar = () => {
                   <Link
                     href={menu.url}
                     className={`block text-h3 font-h3 py-2 pl-3 pr-4 lg:bg-transparent lg:p-0 hover:active ${
-                      pathname == menu.url ? "active" : ""
+                      pathname === menu.url ? "active" : ""
                     } `}
                     aria-current="page"
                     onClick={() => setIsMenuOpen(false)}

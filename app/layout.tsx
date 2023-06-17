@@ -1,5 +1,5 @@
 import './globals.css'
-import { Footer, Logo, Navbar } from './components'
+import { Footer, Logo, Navbar } from '@/components'
 import { Poppins } from 'next/font/google'
 
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ['latin'] })
@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body className={`${poppins.className} text-dark mt-[71px] max-h-screen`}>
+      <body className={`${poppins.className} text-dark mt-[71px] max-h-screen `}>
         <header>
           <Navbar />        
         </header>

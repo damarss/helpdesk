@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
-import { Features, Hero, HomeFAQ, TicketFlow, AccordionFAQ} from './components'
+import { Features, Hero, HomeFAQ, TicketFlow, AccordionFAQ} from '@/components'
 
 type Props = {}
 

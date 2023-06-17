@@ -1,9 +1,9 @@
-import { AccordionFAQ } from "../components";
+import { AccordionFAQ } from "@/components";
 
 const Page = () => {
   return (
-    <main className="flex flex-col mx-7 md:mx-36 mb-16 md:mb-24">
-      <div className="mt-8 md:mt-18 mb-4 pl-1 w-full">
+    <main className="flex flex-col mx-7 md:mx-20 mb-20 md:mb-10 min-h-[70vh] space-y-10">
+      <div className="mt-8 md:mt-18 mb-4 pl-1 w-full h-fit">
         <h1 className="text-3xl font-bold leading-[50px] md:leading-[54px]">
           Pertanyaan Umum
         </h1>

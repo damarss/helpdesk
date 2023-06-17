@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateForm } from "../components";
+import { CreateForm } from "@/components";
 import Link from "next/link";
 import Image from "next/image";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckForm } from "../components";
+import { CheckForm } from "@/components";
 
 type Props = {};
 
