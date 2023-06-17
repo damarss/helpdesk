@@ -66,7 +66,7 @@ const Searchbar: React.FC = () => {
         ref={searchInputRef}
         type="text"
         placeholder="Cari pertanyaan umum"
-        className="ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1 border-[1px] border-grey-light cursor-pointer"
+        className="hidden ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1 border-[1px] border-grey-light cursor-pointer"
         onClick={handleInputClick}
         onChange={handleSearch}
         value={searchText}

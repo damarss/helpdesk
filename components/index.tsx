@@ -10,6 +10,9 @@ import Hero from "./Hero";
 import TicketFlow from "./TicketFlow";
 import Features from "./Features";
 import HomeFAQ from "./HomeFAQ";
+import DiscussionHead from "./DiscussionHead";
+import DiscussionBody from "./DiscussionBody";
+import DiscussionForm from "./DiscussionForm";
 
 export {
     Logo,
@@ -24,4 +27,5 @@ export {
     TicketFlow,
     Features,
     HomeFAQ,
+
 }
