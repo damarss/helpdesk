@@ -47,6 +47,8 @@ const CheckForm: React.FC<CheckFormProps> = () => {
   const [ticketNumber, setTicketNumber] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const [errorType, setErrorType] = useState<InputErrorType | null>(null);
+  const [showModal, setShowModal] = useState(false);
+
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -65,6 +67,7 @@ const CheckForm: React.FC<CheckFormProps> = () => {
 
   return (
     <form onSubmit={handleSubmit}>
+      
       <div className="flex flex-col md:flex-row">
         <div className="flex flex-col space-y-4 md:space-y-6 md:w-2/5 lg:w-1/4">
           <Alert showAlert={showAlert} setShowAlert={setShowAlert} errorType={errorType} />
@@ -127,6 +130,7 @@ const CheckForm: React.FC<CheckFormProps> = () => {
           .
         </p>
       </div>
+      
     </form>
   );
 };
