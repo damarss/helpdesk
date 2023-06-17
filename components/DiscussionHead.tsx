@@ -51,7 +51,7 @@ const DiscussionHead = (props: Props) => {
             <div className="text-base grid grid-cols-12 space-x-1">
               <span className="col-span-4">Tanggal Dibuat</span>
               <span className="col-span-8">
-                : {new Date(ticket.createdAt).toDateString()}
+                : {new Date(ticket.createdAt).toLocaleDateString("id", {day: "numeric", month: "long", year: "numeric"})}
               </span>
             </div>
           </div>
@@ -90,3 +90,4 @@ const DiscussionHead = (props: Props) => {
 };
 
 export default DiscussionHead;
+export type { Props, ticket, discussion };

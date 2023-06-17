@@ -4,6 +4,7 @@ import React, { useState, FormEvent } from "react";
 import Image from "next/image";
 import { IoAlertOutline } from "react-icons/io5";
 import { MdOutlineClose } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 type CheckFormProps = {};
 
@@ -49,6 +50,8 @@ const CheckForm: React.FC<CheckFormProps> = () => {
   const [errorType, setErrorType] = useState<InputErrorType | null>(null);
   const [showModal, setShowModal] = useState(false);
 
+  const router = useRouter();
+
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -61,7 +64,7 @@ const CheckForm: React.FC<CheckFormProps> = () => {
       setShowAlert(true);
       setErrorType("ticketNumber");
     } else {
-      // Lakukan tindakan lain, seperti mengirim data ke server
+      router.push(`/check-ticket/${ticketNumber}`);
     }
   };
 
