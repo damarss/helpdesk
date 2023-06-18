@@ -44,7 +44,7 @@ const Navbar = () => {
     <nav
       className={`z-10 fixed top-0 bg-white w-full ${
         isMenuOpen ? "h-fit" : "h-[77px]"
-      }  border-b-[1px] border-grey-light`}  
+      }  border-b-[1px] border-grey-light`}
     >
       <div className="lg:mx-20 p-4 h-full flex flex-wrap items-center mx-auto lg:gap-10 justify-between">
         <div className="flex w-full h-full lg:w-fit justify-between items-center">
@@ -87,38 +87,34 @@ const Navbar = () => {
           </button>
         </div>
         <div
-          className={`flex flex-1 ${
-            isMenuOpen ? "flex-col" : ""
-          } items-center lg:justify-between`}
+          className={`${
+            isMenuOpen ? "flex flex-col lg:flex-row" : "hidden"
+          } flex-1 w-full lg:flex lg:w-auto lg:items-center lg:justify-between`}
+          id="navbar-default"
         >
-          <div
-            className={`${
-              isMenuOpen ? "flex" : "hidden"
-            } w-full lg:block lg:w-auto`}
-            id="navbar-default"
+          <ul
+            className={`font-medium flex flex-1 flex-col p-4 lg:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-4 lg:mt-0 lg:border-0 ${
+              isMenuOpen ? "w-fit space-y-2" : ""
+            }`}
           >
-            <ul
-              className={`font-medium flex flex-col p-4 lg:p-0 mt-4 rounded-lg lg:flex-row lg:space-x-4 lg:mt-0 lg:border-0 ${
-                isMenuOpen ? "w-fit space-y-2" : ""
-              }`}
-            >
-              {menus.map((menu: menuType) => (
-                <li key={menu.id}>
-                  <Link
-                    href={menu.url}
-                    className={`block text-h3 font-h3 py-2 pl-3 pr-4 lg:bg-transparent lg:p-0 hover:active ${
-                      pathname === menu.url ? "active" : ""
-                    } `}
-                    aria-current="page"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {menu.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {menus.map((menu: menuType) => (
+              <li key={menu.id}>
+                <Link
+                  href={menu.url}
+                  className={`block text-h3 font-h3 py-2 pl-3 pr-4 lg:bg-transparent lg:p-0 hover:active ${
+                    pathname === menu.url ? "active" : ""
+                  } `}
+                  aria-current="page"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {menu.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex p-4 pt-0 lg:p-0">
+            <Searchbar />
           </div>
-          <Searchbar />
         </div>
       </div>
     </nav>

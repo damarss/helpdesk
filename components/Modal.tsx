@@ -24,10 +24,10 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
   });
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
       onClick={closeModal}
     >
-      <div className="bg-white w-[30vw] rounded-lg p-6" onClick={(e) => e.stopPropagation()}>
+      <div className="bg-white w-10/12 md:w-[36vw] rounded-lg p-6 h-5/6 md:h-4/6 overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <button
           type="button"
           className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -63,7 +63,7 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
           />
         </div>
 
-       {categoryTitles.length > 0 ? (
+       {searchResults.length > 0 ? (
           <ul className="space-y-4">
             {categoryTitles.map((title) => (
               <li key={title}>
@@ -80,7 +80,7 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
           </ul>
         ) : (
           <p className="text-gray-500">
-            Tidak ditemukan hasil untuk pencarian ini.
+            {}
           </p>
         )}
       </div>

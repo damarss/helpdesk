@@ -49,12 +49,16 @@ const Searchbar: React.FC = () => {
     if (searchInputRef.current) {
       searchInputRef.current.focus();
     }
+    // set document overflow to hidden
+    document.body.style.overflow = "hidden";
   };
 
   const closeModal = () => {
     setShowModal(false);
     setSearchText("");
     setSearchResults([]);
+    // set document overflow to visible
+    document.body.style.overflow = "visible";
   };
 
   return (
@@ -66,7 +70,7 @@ const Searchbar: React.FC = () => {
         ref={searchInputRef}
         type="text"
         placeholder="Cari pertanyaan umum"
-        className="hidden ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1 border-[1px] border-grey-light cursor-pointer"
+        className="ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md shadow-shadow-1 border-[1px] border-grey-light cursor-pointer"
         onClick={handleInputClick}
         onChange={handleSearch}
         value={searchText}
