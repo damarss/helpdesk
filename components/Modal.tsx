@@ -1,5 +1,7 @@
 import React from "react";
 import { BiSearchAlt } from "react-icons/bi";
+import { usePathname } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 interface Props {
   closeModal: () => void;
@@ -11,23 +13,44 @@ interface SearchItem {
   question: string;
   answer: string;
   categoryTitle: string;
-    id: number;
+  questionId: number;
+  id: number;
 }
 
 const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => {
-    const categoryTitles: string[] = [];
+  const categoryTitles: string[] = [];
 
   searchResults.forEach((item) => {
     if (!categoryTitles.includes(item.categoryTitle)) {
       categoryTitles.push(item.categoryTitle);
     }
   });
+
+ const router = useRouter();
+ const pathname = usePathname();
+
+  const handleQuestionClick = (id: number, questionId: number) => {
+    const query = `?aid=${id}&qid=${questionId}`;
+    const faqUrl = `/faq${query}`;
+
+    if (pathname.startsWith("/faq")) {
+      window.location.href = faqUrl;
+    } else {
+      router.push(faqUrl);
+      closeModal();
+    }
+
+  };
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 backdrop-blur-sm"
       onClick={closeModal}
     >
-      <div className="bg-white w-10/12 md:w-[36vw] rounded-lg p-6 h-5/6 md:h-4/6 overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+      <div
+        className="bg-white w-10/12 md:w-[36vw] rounded-lg p-6 h-5/6 md:h-4/6 overflow-y-auto"
+        onClick={(e) => e.stopPropagation()}
+      >
         <button
           type="button"
           className="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center"
@@ -63,25 +86,27 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
           />
         </div>
 
-       {searchResults.length > 0 ? (
-          <ul className="space-y-4">
-            {categoryTitles.map((title) => (
-              <li key={title}>
-                <h3 className="text-lg font-medium text-gray-700 mb-1">{title}</h3>
-                {searchResults
-                  .filter((item) => item.categoryTitle === title)
-                  .map((item) => (
-                    <p key={item.id} className="text-justify mb-4 pl-4 text-gray-500">
-                      {item.question}
-                    </p>
-                  ))}
-              </li>
-            ))}
-          </ul>
+        {searchResults.length > 0 ? (
+        <ul className="space-y-4">
+          {categoryTitles.map((title) => (
+            <li key={title}>
+              <h3 className="text-lg font-medium text-gray-700 mb-1">{title}</h3>
+              {searchResults
+                .filter((item) => item.categoryTitle === title)
+                .map((item) => (
+                  <p
+                    key={item.id}
+                    className="text-justify mb-4 pl-4 text-gray-500 cursor-pointer"
+                    onClick={() => handleQuestionClick(item.id,item.questionId)}
+                  >
+                    {item.question}
+                  </p>
+                ))}
+            </li>
+          ))}
+        </ul>
         ) : (
-          <p className="text-gray-500">
-            {}
-          </p>
+          <p className="text-gray-500">No results found.</p>
         )}
       </div>
     </div>

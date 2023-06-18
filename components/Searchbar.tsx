@@ -9,6 +9,7 @@ interface SearchItem {
   question: string;
   answer: string;
   categoryTitle: string;
+  questionId: number;
   id: number;
 }
 
@@ -33,6 +34,7 @@ const Searchbar: React.FC = () => {
               question: question.question,
               answer: question.answer,
               categoryTitle: category.title,
+              questionId: question.id,
               id : category.id
             });
           }
@@ -49,7 +51,6 @@ const Searchbar: React.FC = () => {
     if (searchInputRef.current) {
       searchInputRef.current.focus();
     }
-    // set document overflow to hidden
     document.body.style.overflow = "hidden";
   };
 
@@ -57,7 +58,6 @@ const Searchbar: React.FC = () => {
     setShowModal(false);
     setSearchText("");
     setSearchResults([]);
-    // set document overflow to visible
     document.body.style.overflow = "visible";
   };
 

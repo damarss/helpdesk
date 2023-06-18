@@ -33,7 +33,7 @@ const helpMenus: Menu[] = [
   {
     id: 4,
     name: "Panduan Pembuatan Tiket",
-    url: "/guide",
+    url: "/#ticket-flow",
   },
   {
     id: 5,
