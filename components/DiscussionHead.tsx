@@ -19,8 +19,8 @@ const DiscussionHead = (props: Props) => {
           Berikut merupakan diskusi hasil pengajuan tiket anda.
         </p>
       </div>
-      <div className="flex flex-col md:flex-row md:w-5/6 space-y-3 md:space-y-0 md:space-x-3 mb-6">
-        <div className="flex flex-col flex-1">
+      <div className="flex flex-col divide-x-0 md:divide-x-[1px] divide-grey-light md:flex-row md:w-5/6 space-y-3 md:space-y-0 gap-5 mb-6">
+        <div className="flex flex-col flex-1 md:flex-none">
           <h2 className="text-h2 font-h2">Informasi Tiket</h2>
           <div className="flex flex-col">
             <div className="text-base grid grid-cols-12 space-x-1">
@@ -41,12 +41,7 @@ const DiscussionHead = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="flex items-center justify-center relative">
-          <span className="hidden md:block text-transparent absolute -left-20 bg-grey-light w-[1px] h-[57px]">
-            {"."}
-          </span>
-        </div>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col flex-1 md:flex-none md:ps-16 lg:ps-20">
           <h2 className="text-h2 font-h2">Informasi Pengguna</h2>
           <div className="flex flex-col">
             <div className="text-base grid grid-cols-12 space-x-1">
@@ -64,7 +59,7 @@ const DiscussionHead = (props: Props) => {
           </div>
         </div>
       </div>
-      <button className="absolute top-0 right-0 hover:bg-biru hover:text-grey-base drop-shadow-shadow-1 border-[1px] border-biru text-biru text-active font-active rounded-md p-3 md:px-5 md:py-1">
+      <button className="absolute top-0 right-0 hover:bg-biru hover:text-grey-base drop-shadow-lg border-[1px] border-biru text-biru text-active font-active rounded-md p-3 md:px-5 md:py-1">
         <span className="hidden md:inline">Cetak Tiket</span>
         <span className="md:hidden text-3xl">
           <FaPrint />
