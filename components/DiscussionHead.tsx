@@ -12,7 +12,7 @@ const DiscussionHead = (props: Props) => {
   return (
     <div className="relative mt-8 md:mt-18 border-b-[1px] border-grey-light mb-8 md:mb-12">
       <div className="flex flex-col mb-4 md:mb-6">
-        <h1 className="text-3xl font-h1">
+        <h1 className="text-3xl font-h1 w-2/3 md:w-full">
           Diskusi Tiket <span className="text-biru">#{ticket.number}</span>
         </h1>
         <p className="text-base text-grey-mid">
