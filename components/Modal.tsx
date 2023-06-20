@@ -90,13 +90,13 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
         <ul className="space-y-4">
           {categoryTitles.map((title) => (
             <li key={title}>
-              <h3 className="text-lg font-medium text-gray-700 mb-1">{title}</h3>
+              <h3 className="text-base font-semibold text-black-base mb-1">{title}</h3>
               {searchResults
                 .filter((item) => item.categoryTitle === title)
                 .map((item) => (
                   <p
                     key={item.id}
-                    className="text-justify mb-4 pl-4 text-gray-500 cursor-pointer"
+                    className="text-justify mb-4 pl-4 text-base text-grey-mid cursor-pointer"
                     onClick={() => handleQuestionClick(item.id,item.questionId)}
                   >
                     {item.question}
@@ -106,7 +106,9 @@ const Modal: React.FC<Props> = ({ closeModal, searchResults, handleSearch }) => 
           ))}
         </ul>
         ) : (
-          <p className="text-gray-500">No results found.</p>
+          <p className="mt-6 text-base text-grey-mid">
+            Tidak ada hasil untuk pencarian Anda.
+          </p>
         )}
       </div>
     </div>
