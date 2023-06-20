@@ -153,7 +153,7 @@ const CreateForm = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <label htmlFor="email" className="absolute w-full mx-2 text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-10 origin-[0] bg-white peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 ">Email yang telah dimasukkan sebelumnya</label>
+            <label htmlFor="email" className="absolute w-full mx-2 text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-10 origin-[0] bg-white peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 ">Email yang dapat dihubungi</label>
 
             </div> 
             <p id="outlined_error_help" className={`mt-2 text-xs ${(formErrors.email) ? 'text-red-500' : 'hidden' }`}><span className="font-medium">{formErrors.email}</span></p>    
@@ -222,7 +222,7 @@ const CreateForm = () => {
             cols={30}
             rows={6}
             aria-describedby="outlined_error_help"
-            placeholder="Detail Permasalahan yang dihadapi"
+            placeholder="Tuliskan Detail Permasalahan yang dihadapi"
             className={`block w-full p-3 text-base ${!formErrors.detail ? 'border-grey-light' : 'border-red-500' } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white dark:border-green dark:focus:border-green focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
           ></textarea>
           </div>
