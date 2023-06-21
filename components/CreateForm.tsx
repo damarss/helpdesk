@@ -148,7 +148,7 @@ const CreateForm = () => {
               />
               <label
                 htmlFor='name'
-                className='absolute w-full mx-2 text-xs lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
+                className='absolute w-full mx-2 text-[10px] lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
               >
                 Masukkan Nama Lengkap
               </label>
@@ -186,7 +186,7 @@ const CreateForm = () => {
               />
               <label
                 htmlFor='email'
-                className='absolute w-full mx-2 text-xs lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
+                className='absolute w-full mx-2 text-[10px] lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
               >
                 Email yang dapat dihubungi
               </label>
@@ -249,7 +249,7 @@ const CreateForm = () => {
                 />
                 <label
                   htmlFor='judul'
-                  className='absolute w-full mx-2 text-xs lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
+                  className='absolute w-full mx-2 text-[10px] lg:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
                 >
                   Judul permasalahan yang dihadapi
                 </label>
