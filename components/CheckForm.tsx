@@ -18,7 +18,7 @@ const Alert: React.FC<{
   return (
     <>
       {showAlert ? (
-        <div className='text-white px-5 py-3 border-0 rounded relative w-full xl:w-2/3 xl:mx-auto mb-4 bg-red-500'>
+        <div className='text-white px-5 py-3 border-0 rounded relative w-full mb-4 bg-red-500'>
           <span className='text-xl inline-block mr-5 align-middle'>
             <HiBellAlert />
           </span>
