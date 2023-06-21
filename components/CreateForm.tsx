@@ -142,7 +142,7 @@ const CreateForm = () => {
                 placeholder=' '
                 className={`block w-full p-3 text-base ${
                   !formErrors.name ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white dark:border-green dark:focus:border-green focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -180,7 +180,7 @@ const CreateForm = () => {
                 placeholder=' '
                 className={`block w-full p-3 text-base ${
                   !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white dark:border-green dark:focus:border-green focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -245,7 +245,7 @@ const CreateForm = () => {
                   aria-describedby='outlined_error_help'
                   className={`block w-full p-3 text-base ${
                     !formErrors.judul ? 'border-grey-light' : 'border-red-500'
-                  } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white dark:border-green dark:focus:border-green focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                  } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
                 />
                 <label
                   htmlFor='judul'
@@ -279,7 +279,7 @@ const CreateForm = () => {
               placeholder='Tuliskan Detail Permasalahan yang dihadapi'
               className={`block w-full p-3 text-xs lg:text-sm xl:text-base ${
                 !formErrors.detail ? 'border-grey-light' : 'border-red-500'
-              } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white dark:border-green dark:focus:border-green focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
             ></textarea>
           </div>
           <p

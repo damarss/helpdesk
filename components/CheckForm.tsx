@@ -110,7 +110,7 @@ const CheckForm = () => {
                 placeholder=' '
                 className={`block w-full p-3 text-base ${
                   !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -149,7 +149,7 @@ const CheckForm = () => {
                   !formErrors.ticketNumber
                     ? 'border-grey-light'
                     : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none dark:text-white focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
                 value={ticketNumber}
                 onChange={(e) => setTicketNumber(e.target.value)}
               />
