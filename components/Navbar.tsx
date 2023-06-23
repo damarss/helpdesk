@@ -65,7 +65,7 @@ const Navbar = () => {
           <button
             data-collapse-toggle="navbar-default"
             type="button"
-            className="flex w-[35px] h-[35px] justify-center items-center text-sm text-gray-500 lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="flex w-[35px] h-[35px] rounded-md justify-center items-center text-sm text-gray-500 lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-grey-light"
             aria-controls="navbar-default"
             aria-expanded="false"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
