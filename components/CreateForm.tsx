@@ -5,6 +5,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 import { IoAlertOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { MdOutlineClose } from 'react-icons/md';
+import Swal from 'sweetalert2';
 
 interface FormErrors {
   name: string;
@@ -38,6 +39,45 @@ const Alert: React.FC<{
       ) : null}
     </>
   );
+};
+
+const swalWithBootstrapButtons = Swal.mixin({
+  customClass: {
+    confirmButton: 'bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded mx-4',
+    cancelButton: 'bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-2 rounded mx-4',
+  },
+  buttonsStyling: false,
+});
+
+const showResetButton = () => {
+  swalWithBootstrapButtons
+    .fire({
+      title: 'Anda yakin ingin set ulang?',
+      text: "Data yang telah dimasukkan akan terhapus",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Iya',
+      cancelButtonText: 'Tidak',
+      reverseButtons: true,
+    })
+    .then((result) => {
+      if (result.isConfirmed) {
+        swalWithBootstrapButtons.fire(
+          'Berhasil!',
+          'Formulir berhasil di set ulang!',
+          'success'
+        );
+      } else if (
+        /* Read more about handling dismissals below */
+        result.dismiss === Swal.DismissReason.cancel
+      ) {
+        swalWithBootstrapButtons.fire(
+          'Gagal!',
+          'Formulir gagal di set ulang',
+          'error'
+        );
+      }
+    });
 };
 
 const CreateForm = () => {
@@ -92,7 +132,6 @@ const CreateForm = () => {
     const errors = validateForm();
 
     if (isVerified && !Object.values(errors).some((error) => error !== '')) {
-      // Kirim tiket atau lakukan tindakan lainnya
       console.log('Form berhasil di submit');
     } else {
       setFormErrors(errors);
@@ -139,19 +178,13 @@ const CreateForm = () => {
                 name='name'
                 id='name'
                 aria-describedby='outlined_error_help'
-                placeholder=' '
+                placeholder='Masukkan Nama Lengkap'
                 className={`block w-full p-3 text-base ${
                   !formErrors.name ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
-              <label
-                htmlFor='name'
-                className='absolute w-full mx-2 text-[11px] md:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
-              >
-                Masukkan Nama Lengkap
-              </label>
             </div>
             <p
               id='outlined_error_help'
@@ -177,19 +210,13 @@ const CreateForm = () => {
                     ? 'outlined_error_help'
                     : 'outlined_success_help'
                 }
-                placeholder=' '
+                placeholder='Email yang dapat dihubungi'
                 className={`block w-full p-3 text-base ${
                   !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label
-                htmlFor='email'
-                className='absolute w-full mx-2 text-[11px] md:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
-              >
-                Email yang dapat dihubungi
-              </label>
             </div>
             <p
               id='outlined_error_help'
@@ -218,7 +245,7 @@ const CreateForm = () => {
               <select
                 name='topik'
                 id='topik'
-                className='w-full border-[1.5px] p-3 rounded-md border-grey-light focus:outline-none focus:border-dark shadow-shadow-4 text-base placeholder:text-grey-light'
+                className='w-full border-[1.5px] p-3 rounded-md border-grey-light focus:outline-none focus:border-dark drop-shadow-shadow-1 text-base placeholder:text-grey-light'
                 defaultValue='default'
               >
                 <option value='default' disabled hidden>
@@ -241,18 +268,12 @@ const CreateForm = () => {
                   type='text'
                   name='judul'
                   id='judul'
-                  placeholder=' '
+                  placeholder='Judul permasalahan yang dihadapi'
                   aria-describedby='outlined_error_help'
                   className={`block w-full p-3 text-base ${
                     !formErrors.judul ? 'border-grey-light' : 'border-red-500'
-                  } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                  } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
                 />
-                <label
-                  htmlFor='judul'
-                  className='absolute w-full mx-2 text-[11px] md:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
-                >
-                  Judul permasalahan yang dihadapi
-                </label>
               </div>
               <p
                 id='outlined_error_help'
@@ -279,7 +300,7 @@ const CreateForm = () => {
               placeholder='Tuliskan Detail Permasalahan yang dihadapi'
               className={`block w-full p-3 text-xs lg:text-sm xl:text-base ${
                 !formErrors.detail ? 'border-grey-light' : 'border-red-500'
-              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
             ></textarea>
           </div>
           <p
@@ -316,10 +337,7 @@ const CreateForm = () => {
         </button>
         <button
           type='reset'
-          onClick={() => {
-            // scroll to top
-            window.scrollTo(0, 0);
-          }}
+          onClick={showResetButton}
           className='bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-2 border-[1.5px] border-biru rounded-lg  text-biru text-active font-active  shadow-shadow-2'
         >
           Set Ulang

@@ -28,7 +28,7 @@ type ticket = {
 const page = ({ params }: { params: Params }) => {
   const ticket = {
     number: params.number,
-    isClosed: true,
+    isClosed: false,
     createdAt: "2022-09-27T00:00:00.000Z",
     closedAt: "2022-09-27T08:00:00.000Z",
     closedBy: "Humas Polstat STIS",

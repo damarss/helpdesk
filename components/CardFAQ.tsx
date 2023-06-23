@@ -13,7 +13,7 @@ interface Question {
 const CardFAQ: React.FC<CardFaqProps> = ({ question }) => {
   return (
     <>
-      <div className="bg-white mt-2 rounded-lg shadow-shadow-1 whitespace-pre-line p-6 sm:p-12 ">
+      <div className="bg-white mt-2 rounded-lg drop-shadow-shadow-1 whitespace-pre-line p-6 sm:p-12 ">
         <h3 className="text-base sm:text-xl md:text-2xl my-1 font-semibold text-justify">{question.question}</h3>
         <p className="mb-2 font-light text-[11px] text-grey-mid">Terakhir diperbarui setahun lalu</p>
         <hr className="border-b-[1.2px] mx-4 mb-4" />

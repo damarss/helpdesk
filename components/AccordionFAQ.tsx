@@ -68,7 +68,7 @@ const AccordionFAQ: React.FC<AccordionFAQProps> = () => {
         {selectedQuestion ? (
           <CardFAQ question={selectedQuestion} />
         ) : (
-          <div className="bg-white mt-2 rounded-lg shadow-shadow-1 whitespace-pre-line p-12 mb-20">
+          <div className="bg-white mt-2 rounded-lg drop-shadow-shadow-1 whitespace-pre-line p-12 mb-20">
             Pilih pertanyaan untuk melihat jawabannya.
           </div>
         )}

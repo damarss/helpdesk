@@ -107,19 +107,13 @@ const CheckForm = () => {
                     ? 'outlined_error_help'
                     : 'outlined_success_help'
                 }
-                placeholder=' '
+                placeholder='Email yang telah dimasukkan sebelumnya'
                 className={`block w-full p-3 text-base ${
                   !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <label
-                htmlFor='email'
-                className='absolute w-full mx-2 text-[11px] md:text-xs xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0] peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
-              >
-                Email yang telah dimasukkan sebelumnya
-              </label>
             </div>
             <p
               id='outlined_error_help'
@@ -144,21 +138,16 @@ const CheckForm = () => {
                 name='nomor-tiket'
                 id='nomor-tiket'
                 aria-describedby='outlined_error_help'
-                placeholder=' '
+                placeholder='Masukkan Nomor Tiket'
                 className={`block w-full p-3 text-base ${
                   !formErrors.ticketNumber
                     ? 'border-grey-light'
                     : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-4`}
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
                 value={ticketNumber}
                 onChange={(e) => setTicketNumber(e.target.value)}
               />
-              <label
-                htmlFor='nomor-tiket'
-                className='absolute w-full mx-2 text-[11px] md:text-sm xl:text-base text-grey-light duration-300 transform -translate-y-4 scale-50 top-4 z-0 origin-[0]  peer-focus:border-dark rounded-md peer-placeholder-shown:scale-90 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-4 peer-focus:scale-[.5] peer-focus:-translate-y-4 left-0 '
-              >
-                Masukkan Nomor Tiket
-              </label>
+              
             </div>
             <p
               id='outlined_error_help'

@@ -13,7 +13,7 @@ const CreateTicketPage = (props: Props) => {
         <p className='text-base text-grey-mid'>
           Tidak menemukan jawaban atas pertanyaan anda di pertanyaan umum? Buat
           tiket sekarang dengan mengisi formulir berikut.
-        </p>
+        </p>  
       </div>
       <div className='flex flex-col min-[780px]:flex-row'>
         <CreateForm />

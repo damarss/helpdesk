@@ -47,9 +47,9 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
     <>
       <div
         onClick={handleAccordionClick}
-        className={`flex group cursor-pointer w-full mx-auto h-16 justify-between items-center mt-2 rounded-md shadow-shadow-1
+        className={`flex group cursor-pointer w-full mx-auto h-16 justify-between items-center mt-2 rounded-md drop-shadow-shadow-1
         ${isOpen ? 'bg-blue-base' : 'bg-white'} 
-        hover:bg-blue-base hover:shadow-lg focus:bg-blue-base hover:border-none border-2 border-grey-light `}
+        hover:bg-blue-base hover:drop-shadow-shadow-1 focus:bg-blue-base hover:border-none border-2 border-grey-light `}
       >
         <div className='flex group cursor-pointer'>
           <div
@@ -73,7 +73,7 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
           {questions.map((question) => (
             <p
               key={question.id}
-              className={`cursor-pointer text-sm md:text-base ml-10 my-4 bg-white w-2/3 sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
+              className={`cursor-pointer text-sm md:text-base ml-10 my-4 bg-transparent w-2/3 sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
                 selectedQuestionId === question.id ? 'font-semibold' : 'text-grey-mid'
               }`}
               onClick={() => handleQuestionClick(question)}
