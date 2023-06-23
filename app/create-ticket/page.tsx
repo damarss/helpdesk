@@ -13,11 +13,11 @@ const CreateTicketPage = (props: Props) => {
         <p className='text-base text-grey-mid'>
           Tidak menemukan jawaban atas pertanyaan anda di pertanyaan umum? Buat
           tiket sekarang dengan mengisi formulir berikut.
-        </p>  
+        </p>
       </div>
-      <div className='flex flex-col min-[780px]:flex-row'>
+      <div className='flex flex-col md:flex-row'>
         <CreateForm />
-        <div className='ms-auto p-4 md:pe-0 hidden min-[1280px]:block'>
+        <div className='ms-auto p-4 md:pe-0 hidden xl:block'>
           <Image
             src='/assets/img/create-ticket-illustration.png'
             alt='Create Ticket Illustration'

@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState, FormEvent } from 'react';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import { IoAlertOutline } from 'react-icons/io5';
 import { HiBellAlert } from 'react-icons/hi2';
 import { MdOutlineClose } from 'react-icons/md';
 import Swal from 'sweetalert2';
@@ -12,6 +11,8 @@ interface FormErrors {
   email: string;
   judul: string;
   detail: string;
+  topik: string;
+  verified: string;
 }
 
 const Alert: React.FC<{
@@ -22,7 +23,7 @@ const Alert: React.FC<{
   return (
     <>
       {showAlert ? (
-        <div className='text-white px-5 py-3 border-0 rounded relative w-full xl:w-2/3 xl:mx-auto mb-4 bg-red-500'>
+        <div className='text-white px-5 py-3 border-0 rounded relative w-full lg:w-1/2 mb-4 bg-red-500'>
           <span className='text-xl inline-block mr-5 align-middle'>
             <HiBellAlert />
           </span>
@@ -43,48 +44,21 @@ const Alert: React.FC<{
 
 const swalWithBootstrapButtons = Swal.mixin({
   customClass: {
-    confirmButton: 'bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded mx-4',
-    cancelButton: 'bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-2 rounded mx-4',
+    confirmButton:
+      'bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-2 rounded mx-4',
+    cancelButton:
+      'bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-2 rounded mx-4',
   },
   buttonsStyling: false,
 });
-
-const showResetButton = () => {
-  swalWithBootstrapButtons
-    .fire({
-      title: 'Anda yakin ingin set ulang?',
-      text: "Data yang telah dimasukkan akan terhapus",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Iya',
-      cancelButtonText: 'Tidak',
-      reverseButtons: true,
-    })
-    .then((result) => {
-      if (result.isConfirmed) {
-        swalWithBootstrapButtons.fire(
-          'Berhasil!',
-          'Formulir berhasil di set ulang!',
-          'success'
-        );
-      } else if (
-        /* Read more about handling dismissals below */
-        result.dismiss === Swal.DismissReason.cancel
-      ) {
-        swalWithBootstrapButtons.fire(
-          'Gagal!',
-          'Formulir gagal di set ulang',
-          'error'
-        );
-      }
-    });
-};
 
 const CreateForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [judul, setJudul] = useState('');
   const [detail, setDetail] = useState('');
+  const [topik, setTopik] = useState('');
+  const [verified, setVerified] = useState('');
   const [isVerified, setIsVerified] = useState(false);
   const [showError, setShowError] = useState(false);
   const [formErrors, setFormErrors] = useState<FormErrors>({
@@ -92,6 +66,8 @@ const CreateForm = () => {
     email: '',
     judul: '',
     detail: '',
+    topik: '',
+    verified: '',
   });
 
   const validateForm = () => {
@@ -100,6 +76,8 @@ const CreateForm = () => {
       email: '',
       judul: '',
       detail: '',
+      topik: '',
+      verified: '',
     };
 
     if (!name.trim()) {
@@ -121,9 +99,61 @@ const CreateForm = () => {
       errors.detail = 'Detail permasalahan tidak boleh kosong';
     }
 
+    if (!topik.trim()) {
+      errors.topik = 'Topik permasalahan tidak boleh kosong';
+    }
+
+    if (!isVerified) {
+      errors.verified = 'Anda belum menyelesaikan verifikasi';
+    }
+
     setFormErrors(errors);
 
     return errors;
+  };
+
+  const showResetButton = () => {
+    swalWithBootstrapButtons
+      .fire({
+        title: 'Anda yakin ingin set ulang?',
+        text: 'Data yang telah dimasukkan akan terhapus',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Iya',
+        cancelButtonText: 'Tidak',
+        reverseButtons: false,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          swalWithBootstrapButtons.fire(
+            'Berhasil!',
+            'Formulir berhasil di set ulang!',
+            'success'
+          );
+          setName('');
+          setEmail('');
+          setDetail('');
+          setTopik('');
+          setVerified('');
+          setJudul('');
+          setFormErrors({
+            name: '',
+            email: '',
+            judul: '',
+            detail: '',
+            topik: '',
+            verified: '',
+          });
+          setShowError(false);
+          window.scrollTo(0, 0);
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire(
+            'Gagal!',
+            'Formulir gagal di set ulang',
+            'error'
+          );
+        }
+      });
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -143,8 +173,9 @@ const CreateForm = () => {
     formErrors.name ||
     formErrors.email ||
     formErrors.judul ||
-    formErrors.detail;
-
+    formErrors.topik ||
+    formErrors.detail ||
+    formErrors.verified;
   useEffect(() => {
     console.log('isVerified: ' + isVerified);
   }, [isVerified]);
@@ -172,60 +203,44 @@ const CreateForm = () => {
             <label htmlFor='name' className='text-dark text-h3 font-h3 mb-1'>
               Nama Lengkap
             </label>
-            <div className='relative'>
-              <input
-                type='text'
-                name='name'
-                id='name'
-                aria-describedby='outlined_error_help'
-                placeholder='Masukkan Nama Lengkap'
-                className={`block w-full p-3 text-base ${
-                  !formErrors.name ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-            <p
-              id='outlined_error_help'
-              className={`mt-2 text-xs ${
-                formErrors.name ? 'text-red-500' : 'hidden'
-              }`}
-            >
-              <span className='font-medium'>{formErrors.name}</span>
-            </p>
+            <input
+              type='text'
+              name='name'
+              id='name'
+              placeholder='Masukkan Nama Lengkap'
+              className={`w-full p-3 text-base placeholder:text-grey-light ${
+                !formErrors.name ? 'border-grey-light' : 'border-red-500'
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            {formErrors.name && (
+              <p className='mt-2 text-xs text-red-500'>
+                <span className='font-medium'>{formErrors.name}</span>
+              </p>
+            )}
           </div>
 
           <div className='flex flex-1 flex-col'>
             <label htmlFor='email' className='text-dark text-h3 font-h3 mb-1'>
               Alamat Email
             </label>
-            <div className='relative'>
-              <input
-                type='email'
-                name='email'
-                id='email'
-                aria-describedby={
-                  formErrors.email
-                    ? 'outlined_error_help'
-                    : 'outlined_success_help'
-                }
-                placeholder='Email yang dapat dihubungi'
-                className={`block w-full p-3 text-base ${
-                  !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <p
-              id='outlined_error_help'
-              className={`mt-2 text-xs ${
-                formErrors.email ? 'text-red-500' : 'hidden'
-              }`}
-            >
-              <span className='font-medium'>{formErrors.email}</span>
-            </p>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Email yang dapat dihubungi'
+              className={`w-full p-3 text-base ${
+                !formErrors.email ? 'border-grey-light' : 'border-red-500'
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {formErrors.email && (
+              <p className='mt-2 text-xs text-red-500'>
+                <span className='font-medium'>{formErrors.email}</span>
+              </p>
+            )}
           </div>
         </div>
       </div>
@@ -245,8 +260,11 @@ const CreateForm = () => {
               <select
                 name='topik'
                 id='topik'
-                className='w-full border-[1.5px] p-3 rounded-md border-grey-light focus:outline-none focus:border-dark drop-shadow-shadow-1 text-base placeholder:text-grey-light'
+                className={`w-full p-3 text-base ${
+                  !formErrors.topik ? 'border-grey-light' : 'border-red-500'
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
                 defaultValue='default'
+                onChange={(e) => setTopik(e.target.value)}
               >
                 <option value='default' disabled hidden>
                   pilih salah satu topik bantuan
@@ -257,32 +275,32 @@ const CreateForm = () => {
                 <option value='topik-4'>Pembayaran</option>
                 <option value='topik-5'>Pelaksanaan Ujian</option>
               </select>
+              {formErrors.topik && (
+                <p className='mt-2 text-xs text-red-500'>
+                  <span className='font-medium'>{formErrors.topik}</span>
+                </p>
+              )}
             </div>
 
             <div className='flex flex-1 flex-col'>
               <label htmlFor='judul' className='text-dark text-h3 font-h3 mb-1'>
                 Judul Permasalahan
               </label>
-              <div className='relative'>
-                <input
-                  type='text'
-                  name='judul'
-                  id='judul'
-                  placeholder='Judul permasalahan yang dihadapi'
-                  aria-describedby='outlined_error_help'
-                  className={`block w-full p-3 text-base ${
-                    !formErrors.judul ? 'border-grey-light' : 'border-red-500'
-                  } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-                />
-              </div>
-              <p
-                id='outlined_error_help'
-                className={`mt-2 text-xs ${
-                  formErrors.judul ? 'text-red-500' : 'hidden'
-                }`}
-              >
-                <span className='font-medium'>{formErrors.judul}</span>
-              </p>
+              <input
+                type='text'
+                name='judul'
+                id='judul'
+                placeholder='Judul permasalahan yang dihadapi'
+                className={`block w-full p-3 text-base ${
+                  !formErrors.judul ? 'border-grey-light' : 'border-red-500'
+                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+                onChange={(e) => setJudul(e.target.value)}
+              />
+              {formErrors.judul && (
+                <p className='mt-2 text-xs text-red-500'>
+                  <span className='font-medium'>{formErrors.judul}</span>
+                </p>
+              )}
             </div>
           </div>
         </div>
@@ -290,55 +308,55 @@ const CreateForm = () => {
           <label htmlFor='email' className='text-dark text-h3 font-h3 mb-1'>
             Detail Permasalahan
           </label>
-          <div className='relative'>
-            <textarea
-              name='detail'
-              id='detail'
-              cols={30}
-              rows={6}
-              aria-describedby='outlined_error_help'
-              placeholder='Tuliskan Detail Permasalahan yang dihadapi'
-              className={`block w-full p-3 text-xs lg:text-sm xl:text-base ${
-                !formErrors.detail ? 'border-grey-light' : 'border-red-500'
-              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-            ></textarea>
-          </div>
-          <p
-            id='outlined_error_help'
-            className={`mt-2 text-xs ${
-              formErrors.detail ? 'text-red-500' : 'hidden'
-            }`}
-          >
-            <span className='font-medium'>{formErrors.detail}</span>
-          </p>
+          <textarea
+            name='detail'
+            id='detail'
+            cols={30}
+            rows={6}
+            placeholder='Tuliskan Detail Permasalahan yang dihadapi'
+            className={`block w-full p-3 text-xs lg:text-sm xl:text-base ${
+              !formErrors.detail ? 'border-grey-light' : 'border-red-500'
+            } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+            onChange={(e) => setDetail(e.target.value)}
+          ></textarea>
+          {formErrors.detail && (
+            <p className='mt-2 text-xs text-red-500'>
+              <span className='font-medium'>{formErrors.detail}</span>
+            </p>
+          )}
         </div>
         <div className='flex justify-center md:justify-start'>
           <button
             type='button'
-            className='text-biru text-base border-[1.5px] border-biru border-dashed px-5 py-2 rounded-lg hover:bg-grey-light shadow-shadow-2 w-full md:w-fit'
+            className='text-biru text-base border-[1.5px] border-biru border-dashed px-5 py-2 rounded-lg hover:bg-grey-light shadow-shadow-1 w-full md:w-fit'
           >
             Klik untuk unggah dokumen
           </button>
         </div>
       </div>
 
-      <div className='flex justify-center md:justify-start'>
+      <div className='flex flex-col justify-center md:justify-start'>
         <HCaptcha
           sitekey='8e3b4de6-cd98-4c8c-ad52-2c0a82f1a024'
           onVerify={(token, ekey) => setIsVerified(true)}
         />
+        {formErrors.verified && (
+          <p className='text-red-500 text-xs mt-1'>
+            <span className='font-medium'>{formErrors.verified}</span>
+          </p>
+        )}
       </div>
       <div className='flex space-x-5 justify-center md:justify-start'>
         <button
           type='submit'
-          className='bg-biru flex-1 md:flex-none px-6 md:px-9 py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2'
+          className='bg-biru flex-1 md:flex-none px-6 md:px-9 py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-1'
         >
           Buat Tiket
         </button>
         <button
           type='reset'
           onClick={showResetButton}
-          className='bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-2 border-[1.5px] border-biru rounded-lg  text-biru text-active font-active  shadow-shadow-2'
+          className='bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-1'
         >
           Set Ulang
         </button>

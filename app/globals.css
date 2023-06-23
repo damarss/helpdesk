@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'sweetalert2/dist/sweetalert2.min.css';
-
 @layer utilities {
     .active {
         @apply border-b-[1.5px];

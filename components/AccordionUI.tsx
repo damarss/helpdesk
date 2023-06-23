@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
@@ -28,7 +28,9 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
   isOpen,
 }) => {
   const router = useRouter();
-  const [selectedQuestionId, setSelectedQuestionId] = useState<number | null>(null);
+  const [selectedQuestionId, setSelectedQuestionId] = useState<number | null>(
+    null
+  );
 
   const handleAccordionClick = () => {
     onAccordionClick(id);
@@ -53,7 +55,9 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
       >
         <div className='flex group cursor-pointer'>
           <div
-            className={`text-${isOpen ? 'white' : 'grey-mid'} pl-6 group-hover:text-white font-semibold text-[13px] leading-5`}
+            className={`text-${
+              isOpen ? 'white' : 'grey-mid'
+            } pl-6 group-hover:text-white font-semibold text-[13px] leading-5`}
           >
             {title}
           </div>
@@ -61,7 +65,9 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
 
         <div className='flex items-center justify-center pr-2'>
           {isOpen ? (
-            <HiChevronUp className={`w-8 h-8 group-hover:text-white text-white`} />
+            <HiChevronUp
+              className={`w-8 h-8 group-hover:text-white text-white`}
+            />
           ) : (
             <HiChevronRight className='w-8 h-8 group-hover:text-white text-grey-mid' />
           )}
@@ -73,8 +79,10 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
           {questions.map((question) => (
             <p
               key={question.id}
-              className={`cursor-pointer text-sm md:text-base ml-10 my-4 bg-transparent w-2/3 sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
-                selectedQuestionId === question.id ? 'font-semibold' : 'text-grey-mid'
+              className={`cursor-pointer text-sm md:text-base ml-10 pr-4 my-4 bg-transparent w-2/3 sm:w-3/4 h-auto rounded-md py-4 mb-2 hover:text-dark-main ${
+                selectedQuestionId === question.id
+                  ? 'font-semibold'
+                  : 'text-grey-mid'
               }`}
               onClick={() => handleQuestionClick(question)}
             >

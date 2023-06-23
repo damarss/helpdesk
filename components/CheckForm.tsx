@@ -61,6 +61,8 @@ const CheckForm = () => {
 
     if (!ticketNumber) {
       errors.ticketNumber = 'Nomor Tiket di Perlukan';
+    } else if (!/^[0-9]+$/.test(ticketNumber)) {
+      errors.ticketNumber = 'Nomor Tiket tidak valid';
     }
 
     setFormErrors(errors);
@@ -97,32 +99,22 @@ const CheckForm = () => {
             <label htmlFor='email' className='text-dark text-h3 font-h3 mb-1'>
               Alamat Email
             </label>
-            <div className='relative'>
-              <input
-                type='email'
-                name='email'
-                id='email'
-                aria-describedby={
-                  formErrors.email
-                    ? 'outlined_error_help'
-                    : 'outlined_success_help'
-                }
-                placeholder='Email yang telah dimasukkan sebelumnya'
-                className={`block w-full p-3 text-base ${
-                  !formErrors.email ? 'border-grey-light' : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <p
-              id='outlined_error_help'
-              className={`mt-2 text-xs ${
-                formErrors.email ? 'text-red-500' : 'hidden'
-              }`}
-            >
-              <span className='font-medium'>{formErrors.email}</span>
-            </p>
+            <input
+              type='email'
+              name='email'
+              id='email'
+              placeholder='Email yang telah dimasukkan sebelumnya'
+              className={`w-full p-3 text-base ${
+                !formErrors.email ? 'border-grey-light' : 'border-red-500'
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {formErrors.email && (
+              <p className='mt-2 text-xs text-red-500'>
+                <span className='font-medium'>{formErrors.email}</span>
+              </p>
+            )}
           </div>
 
           <div className='flex flex-col pb-3'>
@@ -132,31 +124,24 @@ const CheckForm = () => {
             >
               Nomor Tiket
             </label>
-            <div className='relative'>
-              <input
-                type='number'
-                name='nomor-tiket'
-                id='nomor-tiket'
-                aria-describedby='outlined_error_help'
-                placeholder='Masukkan Nomor Tiket'
-                className={`block w-full p-3 text-base ${
-                  !formErrors.ticketNumber
-                    ? 'border-grey-light'
-                    : 'border-red-500'
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer drop-shadow-shadow-1`}
-                value={ticketNumber}
-                onChange={(e) => setTicketNumber(e.target.value)}
-              />
-              
-            </div>
-            <p
-              id='outlined_error_help'
-              className={`mt-2 text-xs ${
-                formErrors.ticketNumber ? 'text-red-500' : 'hidden'
-              }`}
-            >
-              <span className='font-medium'>{formErrors.ticketNumber}</span>
-            </p>
+            <input
+              type='text'
+              name='nomor-tiket'
+              id='nomor-tiket'
+              placeholder='Masukkan Nomor Tiket'
+              className={`block w-full p-3 text-base ${
+                !formErrors.ticketNumber
+                  ? 'border-grey-light'
+                  : 'border-red-500'
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark shadow-shadow-1`}
+              value={ticketNumber}
+              onChange={(e) => setTicketNumber(e.target.value)}
+            />
+            {formErrors.ticketNumber && (
+              <p className='mt-2 text-xs text-red-500'>
+                <span className='font-medium'>{formErrors.ticketNumber}</span>
+              </p>
+            )}
           </div>
 
           <div className='flex space-x-7 justify-center md:justify-start'>
