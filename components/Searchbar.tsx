@@ -64,7 +64,7 @@ const Searchbar: React.FC = () => {
   return (
     <div className="relative">
       <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-        <BiSearchAlt className="text-gray-400" />
+        <BiSearchAlt className="text-gray-400 z-10" />
       </span>
       <input
         ref={searchInputRef}
