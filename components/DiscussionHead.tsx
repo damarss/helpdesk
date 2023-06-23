@@ -27,7 +27,7 @@ const DiscussionHead = (props: Props) => {
               <span className="col-span-4">Status Tiket</span>
               <span
                 className={`col-span-8 font-active ${
-                  ticket?.isClosed ? "text-green" : "text-grey-mid"
+                  ticket?.isClosed ? "text-hijau" : "text-grey-mid"
                 }`}
               >
                 : {ticket?.isClosed ? "Selesai" : "Berjalan"}

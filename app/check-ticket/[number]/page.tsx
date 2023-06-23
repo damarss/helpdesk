@@ -28,46 +28,11 @@ type ticket = {
   discussions: discussion[];
 };
 
-<<<<<<< HEAD
-const page = ({ params }: { params: Params }) => {
-  const ticket = {
-    number: params.number,
-    isClosed: false,
-    createdAt: "2022-09-27T00:00:00.000Z",
-    closedAt: "2022-09-27T08:00:00.000Z",
-    closedBy: "Humas Polstat STIS",
-    userName: "Rizky Wijaya",
-    userEmail: "rizkywijaya@gmail.com",
-    discussions: [
-      {
-        id: 1,
-        userName: "Rizky Wijaya",
-        message:
-          "Saya sangat tertarik untuk mendaftar sebagai mahasiswa di Polstat STIS. Bisakah Anda memberikan informasi lebih lengkap mengenai tata cara pendaftarannya? Saya ingin mengetahui langkah-langkah yang harus saya ikuti.",
-        createdAt: "2021-08-01T00:00:00.000Z",
-      },
-      {
-        id: 2,
-        userName: "Humas Polstat STIS",
-        message:
-          "Anda perlu mengisi formulir pendaftaran online dan membayar biaya pendaftaran. Selanjutnya, kirimkan dokumen-dokumen pendukung yang diminta. Setelah itu, Anda akan mengikuti ujian seleksi sesuai dengan program studi yang Anda pilih. Setelah proses seleksi selesai, Polstat STIS akan mengumumkan hasil seleksi dan jika diterima, Anda perlu melakukan registrasi dan pembayaran biaya kuliah. Jika Anda membutuhkan bantuan tambahan, kami siap membantu.",
-        createdAt: "2021-08-01T00:00:00.000Z",
-      },
-      {
-        id: 3,
-        userName: "Rizky Wijaya",
-        message:
-          "Terima kasih atas informasinya. Saya akan segera mendaftar dan mengikuti proses seleksi. Jika saya membutuhkan bantuan, saya akan menghubungi Anda kembali.",
-        createdAt: "2021-08-01T00:00:00.000Z",
-      }
-    ],
-=======
 const Page = ({ params }: { params: Params }) => {
   const [ticket, setTicket] = useState<ticket | null>(null);
-
   const handleChangeStatus = (): void => {
     setTicket(ticket ? { ...ticket, isClosed: !ticket.isClosed } : null);
->>>>>>> 6d75552d920216bd7ddab7646f690b41194eef92
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {

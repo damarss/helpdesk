@@ -117,7 +117,7 @@ const Modal: React.FC<Props> = ({
                   .map((item) => (
                     <p
                       key={item.id}
-                      className='text-justify mb-4 pl-4 text-base hover:text-dark-main hover:font-semibold text-grey-mid cursor-pointer'
+                      className='text-justify mb-4 pl-4 text-base hover:text-dark-main text-grey-mid cursor-pointer'
                       onClick={() =>
                         handleQuestionClick(item.id, item.questionId)
                       }

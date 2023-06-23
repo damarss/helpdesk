@@ -12,7 +12,7 @@ const DiscussionCard = (props: Props) => {
   const { creator, name, message, createdAt } = props;
 
   return (
-    <div className="flex gap-x-3 mb-8 md:mb-12 w-full">
+    <div className="flex gap-x-3 mb-10 md:mb-14 w-full">
       <div className="flex p-4 text-4xl bg-grey-light text-grey-base items-center justify-center w-[50px] h-[50px] rounded-full">
         <FaUserAlt />
       </div>
