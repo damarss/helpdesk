@@ -7,4 +7,12 @@
         @apply border-b-[1.5px];
         @apply border-biru;
     }
+
+    .searchbar {
+        width: 42px;
+
+        @media screen and (min-width: 1210px) {
+            width: 297px;
+        }
+    }
 }

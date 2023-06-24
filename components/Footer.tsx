@@ -46,7 +46,7 @@ const Footer = () => {
   const pathname = usePathname();
 
   return (
-    <footer className='bg-grey-base pt-8 w-full mt-auto px-8'>
+    <footer className='bg-grey-base pt-8 pb-6 md:pb-0 w-full mt-auto px-8'>
       <div className='container mx-auto'>
         <div className='flex flex-wrap md:flex-nowrap items-start'>
           <div className='flex items-center md:items-start md:flex-auto flex-col w-full px-4'>
