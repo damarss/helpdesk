@@ -20,7 +20,7 @@ const CheckTicketPage = (props: Props) => {
         </div>
         <div className='hidden md:flex md:flex-1 mx-auto justify-evenly lg:justify-end xl:justify-center items-center '>
           <Image
-            src='/assets/img/verify.png'
+            src='/assets/img/Verify.png'
             alt='Create Ticket Illustration'
             width={250}
             height={250}
