@@ -106,7 +106,7 @@ const CheckForm = () => {
               placeholder='Email yang telah dimasukkan sebelumnya'
               className={`w-full p-3 text-base ${
                 !formErrors.email ? 'border-grey-light' : 'border-red-500'
-              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1 placeholder:text-[13px]`}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -133,7 +133,7 @@ const CheckForm = () => {
                 !formErrors.ticketNumber
                   ? 'border-grey-light'
                   : 'border-red-500'
-              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark shadow-shadow-1`}
+              } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark shadow-shadow-1 placeholder:text-[13px]`}
               value={ticketNumber}
               onChange={(e) => setTicketNumber(e.target.value)}
             />
