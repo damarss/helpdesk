@@ -1,37 +1,47 @@
-import React from 'react';
-import { CreateForm } from '@/components';
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
+import React, { useEffect } from "react";
+import { CreateForm } from "@/components";
+import Link from "next/link";
+import Image from "next/image";
 
 type Props = {};
 
 const CreateTicketPage = (props: Props) => {
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+      e.returnValue = "";
+    };
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+  }, []);
+
   return (
-    <main className='flex flex-col justify-center mx-7 md:mx-36'>
-      <div className='mt-8 md:mt-18 mb-6 md:w-2/3'>
-        <h1 className='text-3xl font-h1 mb-2'>Buka Tiket Baru</h1>
-        <p className='text-base text-grey-mid'>
+    <main className="flex flex-col justify-center mx-7 md:mx-36">
+      <div className="mt-8 md:mt-18 mb-6 md:w-2/3">
+        <h1 className="text-3xl font-h1 mb-2">Buka Tiket Baru</h1>
+        <p className="text-base text-grey-mid">
           Tidak menemukan jawaban atas pertanyaan anda di pertanyaan umum? Buat
           tiket sekarang dengan mengisi formulir berikut.
         </p>
       </div>
-      <div className='flex flex-col md:flex-row'>
+      <div className="flex flex-col md:flex-row">
         <CreateForm />
-        <div className='ms-auto p-4 md:pe-0 hidden xl:block'>
+        <div className="ms-auto p-4 md:pe-0 hidden xl:block">
           <Image
-            src='/assets/img/create-ticket-illustration.png'
-            alt='Create Ticket Illustration'
+            src="/assets/img/create-ticket-illustration.png"
+            alt="Create Ticket Illustration"
             width={400}
             height={400}
             priority
           />
         </div>
       </div>
-      <p className='text-grey-mid text-secondary mb-16 md:mb-24'>
-        Sudah pernah membuat tiket? Cek status tiket anda{' '}
+      <p className="text-grey-mid text-secondary mb-16 md:mb-24">
+        Sudah pernah membuat tiket? Cek status tiket anda{" "}
         <Link
-          className='text-dark font-semibold underline'
-          href='/check-ticket'
+          className="text-dark font-semibold underline"
+          href="/check-ticket"
         >
           di sini
         </Link>

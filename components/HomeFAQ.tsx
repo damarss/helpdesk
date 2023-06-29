@@ -64,7 +64,7 @@ const HomeFAQ = () => {
           </div>
         ))}
       </div>
-      <Link href="/faq" className="mx-auto flex w-fit bg-grey-light text-lg font-semibold px-10 py-2 rounded-lg hover:bg-grey-mid">
+      <Link href="/faq" className="mx-auto flex w-fit hover:bg-biru hover:text-grey-base drop-shadow-lg border-[1px] border-biru text-biru text-active font-active rounded-md p-3 md:px-5 md:py-1">
         Lainnya
       </Link>
     </div>
