@@ -59,7 +59,7 @@ const DiscussionHead = (props: Props) => {
           </div>
         </div>
       </div>
-      <button className="absolute top-0 right-0 hover:bg-biru hover:text-grey-base drop-shadow-lg border-[1px] border-biru text-biru text-active font-active rounded-md p-3 md:px-5 md:py-1">
+      <button className="flex absolute top-0 right-0 bg-grey-base flex-1 md:flex-none p-3 md:px-9 md:py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active shadow-shadow-2">
         <span className="hidden md:inline">Cetak Tiket</span>
         <span className="md:hidden text-3xl">
           <FaPrint />
