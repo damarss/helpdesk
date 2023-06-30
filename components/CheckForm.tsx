@@ -147,7 +147,7 @@ const CheckForm = () => {
           <div className='flex space-x-7 justify-center md:justify-start'>
             <button
               type='submit'
-              className='bg-biru px-6 md:px-9 py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2'
+              className='bg-biru px-6 md:px-9 py-3 md:py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2 w-full md:w-fit'
             >
               Lihat Tiket
             </button>

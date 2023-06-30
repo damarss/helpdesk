@@ -243,7 +243,7 @@ const CreateForm = () => {
         </div>
       </div>
 
-      <div className="pb-6">
+      <div className="pb-4">
         <h2 className="text-h2 font-h2">Detail Tiket</h2>
         <p className="text-secondary text-grey-mid mb-6">
           Detail pertanyaan yang akan diajukan.
@@ -335,7 +335,7 @@ const CreateForm = () => {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center md:justify-start">
+      <div className="flex flex-col items-center md:items-start">
         <HCaptcha
           sitekey="8e3b4de6-cd98-4c8c-ad52-2c0a82f1a024"
           onVerify={(token, ekey) => setIsVerified(true)}
@@ -349,14 +349,14 @@ const CreateForm = () => {
       <div className="flex space-x-5 justify-center md:justify-start">
         <button
           type="submit"
-          className="bg-biru flex-1 md:flex-none px-6 md:px-9 py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-1"
+          className="bg-biru flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-1"
         >
           Buat Tiket
         </button>
         <button
           type="button"
           onClick={showResetButton}
-          className="bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-1"
+          className="bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-1"
         >
           Set Ulang
         </button>
