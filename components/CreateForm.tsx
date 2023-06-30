@@ -349,14 +349,14 @@ const CreateForm = () => {
       <div className="flex space-x-5 justify-center md:justify-start">
         <button
           type="submit"
-          className="bg-biru flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-1"
+          className="bg-biru flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2"
         >
           Buat Tiket
         </button>
         <button
           type="button"
           onClick={showResetButton}
-          className="bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-1"
+          className="bg-grey-base flex-1 md:flex-none px-6 md:px-9 py-3 md:py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-2"
         >
           Set Ulang
         </button>
