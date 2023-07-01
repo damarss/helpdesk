@@ -19,7 +19,7 @@ const DiscussionForm = (props: Props) => {
         Klik untuk unggah dokumen
       </button>
       <button
-        className="block bg-biru flex-1 md:flex-none px-6 md:px-9 py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2"
+        className="block bg-biru px-6 md:px-9 py-3 md:py-2 text-active font-active rounded-lg text-grey-base shadow-shadow-2 w-full md:w-fit"
         type="submit"
       >
         Kirim jawaban
