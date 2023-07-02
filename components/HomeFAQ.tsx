@@ -42,7 +42,7 @@ const questions: questionType[] = [
 const HomeFAQ = () => {
   return (
     <div className="mb-16 md:mb-24">
-      <h1 className="text-3xl font-h1 uppercase text-center mb-8 md:mb-14">
+      <h1 className="text-[36px] font-h1 uppercase text-center mb-8 md:mb-14">
         PERTANYAAN UMUM
       </h1>
       <div className="flex flex-col justify-center items-center md:mx-28 mb-3">
@@ -64,7 +64,7 @@ const HomeFAQ = () => {
           </div>
         ))}
       </div>
-      <Link href="/faq" className="mx-auto flex w-fit bg-grey-light text-lg font-semibold px-10 py-2 rounded-lg hover:bg-grey-mid">
+      <Link href="/faq" className="mx-auto flex w-fit bg-grey-base flex-1 md:flex-none px-9 py-3 md:py-2 border-[1.5px] border-biru rounded-lg text-biru text-active font-active  shadow-shadow-2">
         Lainnya
       </Link>
     </div>

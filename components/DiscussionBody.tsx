@@ -20,7 +20,7 @@ const DiscussionBody = (props: Props) => {
           year: "numeric",
           hour: "numeric",
           minute: "numeric"
-        })}
+        })}.
       </span>
       {ticket &&
         ticket?.discussions.map((discussion) => (
@@ -33,7 +33,7 @@ const DiscussionBody = (props: Props) => {
           />
         ))}
       {ticket?.isClosed && (<div className="flex space-x-2 items-center">
-        <LuCheckSquare className="text-xl text-green" />
+        <LuCheckSquare className="text-xl text-hijau" />
         <p className="text-secondary text-grey-light">Ditutup oleh {ticket?.closedBy} dengan status selesai pada {new Date(ticket?.closedAt || "").toLocaleDateString("id", {day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "numeric"})}.</p>
       </div>)}
     </div>

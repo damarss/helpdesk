@@ -8,7 +8,7 @@ const CheckTicketPage = (props: Props) => {
   return (
     <main className='flex flex-col flex-grow mx-7 md:mx-28 lg:mx-36'>
       <div className='mt-8 md:mt-18 mb-4 pl-1 w-full'>
-        <h1 className='text-4xl font-h1 leading-[54px]'>Cek Status Tiket</h1>
+        <h1 className='text-[36px] font-h1 leading-[54px]'>Cek Status Tiket</h1>
         <p className='text-base text-grey-mid font-normal mb-4 leading-5'>
           Ingin mengecek status tiket yang telah dibuat? Silahkan masukan email
           dan nomor tiket anda.
@@ -20,7 +20,7 @@ const CheckTicketPage = (props: Props) => {
         </div>
         <div className='hidden md:flex md:flex-1 mx-auto justify-evenly lg:justify-end xl:justify-center items-center '>
           <Image
-            src='/assets/img/verify.png'
+            src='/assets/img/Verify.png'
             alt='Create Ticket Illustration'
             width={250}
             height={250}

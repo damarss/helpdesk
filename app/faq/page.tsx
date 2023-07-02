@@ -8,7 +8,7 @@ const Page: React.FC = () => {
   return (
     <main className="flex flex-col mx-7 md:mx-20 min-h-[70vh]">
       <div className="mt-8 md:mt-10 mb-4 pl-1 w-full">
-        <h1 className="text-4xl font-h1 leading-[50px] md:leading-[54px]">
+        <h1 className="text-[36px] font-h1 leading-[50px] md:leading-[54px]">
           Pertanyaan Umum
         </h1>
         <p className="text-base text-grey-mid font-normal mb-4 leading-5">
