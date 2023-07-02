@@ -27,7 +27,7 @@ const features: featureType[] = [
 const Features = () => {
   return (
     <div className="flex flex-col justify-center items-center mb-16 md:mb-24">
-      <h1 className="text-3xl font-h1 uppercase mb-8 md:mb-14">LAYANAN</h1>
+      <h1 className="text-[36px] font-h1 uppercase mb-8 md:mb-14">LAYANAN</h1>
       <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 md:space-x-24">
         {features.map((feature) => (
           <Link key={feature.id} href={feature.url}>

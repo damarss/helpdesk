@@ -14,7 +14,7 @@ const Hero = () => {
         priority
       />
       <div className="flex flex-col" data-aos="fade-up" data-aos-once="true">
-        <h1 className="uppercase text-3xl font-h1 text-center mb-5 md:mb-10">
+        <h1 className="uppercase text-[36px] font-h1 text-center mb-5 md:mb-10">
           HELPDESK POLITEKNIK STATISTIKA STIS
         </h1>
         <p className="text-active font-active text-justify">

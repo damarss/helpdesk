@@ -57,7 +57,7 @@ const AccordionUI: React.FC<AccordionUIProps> = ({
           <div
             className={`text-${
               isOpen ? 'white' : 'grey-mid'
-            } pl-6 group-hover:text-white font-semibold text-[13px] leading-5`}
+            } pl-6 group-hover:text-white font-semibold text-base leading-5`}
           >
             {title}
           </div>

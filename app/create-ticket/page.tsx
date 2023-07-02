@@ -19,7 +19,7 @@ const CreateTicketPage = (props: Props) => {
   return (
     <main className="flex flex-col justify-center mx-7 md:mx-36">
       <div className="mt-8 md:mt-18 mb-6 md:w-2/3">
-        <h1 className="text-3xl font-h1 mb-2">Buka Tiket Baru</h1>
+        <h1 className="text-[36px] font-h1 mb-2">Buka Tiket Baru</h1>
         <p className="text-base text-grey-mid">
           Tidak menemukan jawaban atas pertanyaan anda di pertanyaan umum? Buat
           tiket sekarang dengan mengisi formulir berikut.

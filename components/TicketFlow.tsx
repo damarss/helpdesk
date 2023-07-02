@@ -32,7 +32,7 @@ const TicketFlow: React.FC<TicketFlowProps> = ({ id }) => {
 
   return (
     <div id={id} className="mb-16 md:mb-24">
-      <h1  className="text-3xl font-h1 text-center mb-8 md:mb-14 uppercase">
+      <h1  className="text-[36px] font-h1 text-center mb-8 md:mb-14 uppercase">
         Alur Pembuatan Tiket
       </h1>
       <div  className="flex flex-col md:flex-row justify-center items-center w-full md:my-4 space-y-7 md:space-x-28 md:space-y-0">

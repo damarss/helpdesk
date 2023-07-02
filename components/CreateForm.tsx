@@ -260,7 +260,7 @@ const CreateForm = () => {
                 id="topik"
                 className={`w-full p-3 text-base placeholder:text-[13px] placeholder:text-grey-light ${
                   !formErrors.topik ? "border-grey-light" : "border-red-500"
-                } rounded-md border-[1.5px] bg-transparent appearance-none focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
+                } rounded-md border-[1.5px] bg-transparent focus:outline-none focus:ring-0 focus:border-dark peer shadow-shadow-1`}
                 defaultValue="default"
                 onChange={(e) => setTopik(e.target.value)}
               >
