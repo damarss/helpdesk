@@ -51,7 +51,7 @@ const Footer = () => {
         <div className='flex flex-wrap md:flex-nowrap items-start'>
           <div className='flex items-center md:items-start md:flex-auto flex-col w-full px-4'>
             <div className='flex items-center'>
-              <Logo />
+              <Logo width={50} height={50} />
               <div className='flex flex-col ml-4'>
                 <span className='text-3xl leading-11 font-bold'>Helpdesk</span>
                 <span className='font-normal leading-6 text-base text-grey-mid'>

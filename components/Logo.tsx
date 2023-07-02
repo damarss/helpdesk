@@ -1,21 +1,23 @@
-import React from 'react'
-import Image from 'next/image'
+import React from 'react';
+import Image from 'next/image';
 
+type Props = {
+  width?: number;
+  height?: number;
+};
 
-const Logo = () => {
+const Logo = ({ width, height }: Props) => {
   return (
     <div>
-      <Image 
+      <Image
         src={'/assets/img/logo.png'}
-        alt="Logo Helpdesk"
-        width={37}
-        height={35}
+        alt='Logo Helpdesk'
+        width={width}
+        height={height}
       />
-      <h1>
-
-      </h1>
+      <h1></h1>
     </div>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;

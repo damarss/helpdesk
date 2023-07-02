@@ -64,13 +64,16 @@ const Searchbar: React.FC = () => {
   return (
     <div className='relative'>
       <span className='absolute inset-y-0 left-0 flex items-center pl-3'>
-        <BiSearchAlt className='text-gray-400 z-10' />
+        <BiSearchAlt
+          className='text-gray-400 text-2xl lg:text-3xl xl:text-2xl z-10 cursor-pointer'
+          onClick={handleInputClick}
+        />
       </span>
       <input
         ref={searchInputRef}
         type='text'
         placeholder='Cari pertanyaan umum'
-        className='ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md drop-shadow-shadow-1 border-[1px] border-grey-light cursor-pointer'
+        className='lg:hidden xl:block ps-10 sm:text-sm text-h3 font-h3 placeholder:text-h3 placeholder:font-h3 h-[42px] w-[276px] rounded-md drop-shadow-shadow-1 border-[1px] border-grey-light cursor-pointer'
         onClick={handleInputClick}
         onChange={handleSearch}
         value={searchText}
